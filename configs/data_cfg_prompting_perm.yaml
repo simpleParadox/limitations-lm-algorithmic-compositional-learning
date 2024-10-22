@@ -1,0 +1,8 @@
+# The following defines the task hyperparameters we used for prompting.
+data_mix:
+  - task: PointerExecutionReverseMulticount
+    logname: perm
+    how_many: 100
+    sub_task: multiseqrev
+    min_len: 10
+    max_len: 20

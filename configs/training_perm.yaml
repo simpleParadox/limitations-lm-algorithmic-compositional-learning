@@ -1,0 +1,28 @@
+# The following defines the task hyperparameters we used for training. 
+# Validation sets have are iid, so the same ask hyperparameters.
+# the how_many parameter for the composition task (last in the list) is varied in our experiments as specified in the paper.
+data_mix:
+  - task: PointerExecutionReverseMulticount
+    logname: pe
+    how_many: 40000
+    sub_task: seq
+    min_len: 10
+    max_len: 20
+  - task: PointerExecutionReverseMulticount
+    logname: pem
+    how_many: 40000
+    sub_task: multiseq
+    min_len: 10
+    max_len: 20
+  - task: PointerExecutionReverseMulticount
+    logname: per
+    how_many: 150000
+    sub_task: seqrev
+    min_len: 10
+    max_len: 20
+  - task: PointerExecutionReverseMulticount
+    logname: perm 
+    how_many: 1000000 # example number, varied in experiments to test compositional learning
+    sub_task: multiseqrev
+    min_len: 10
+    max_len: 20

@@ -1,0 +1,72 @@
+# This config specifies the experiments to run for prompting
+
+# your local gemini settings (only applicable if which_model_type is gemini)
+gemini_project_id: your-project-id
+gemini_project_location: your-project-location
+
+# your local openai settings (only applicable if which_model_type is openai)
+openai_api_key: your-openai-api-key
+
+model_name: o1-preview # we used gpt-4-0613 and o1-preview and gemini-pro
+
+experiments:
+
+  - task: PEN # automatically fetches data_cfg_prompting_pen.yaml
+    how_many_runs: 8 # how many times the LLM should be prompted
+    has_description: false # true/false
+    ask_for_cot: false # true/false/with_code
+    fewshot_cot: false # true/false/2stages
+    remove_doublegangers: false # true/false
+    manyshot: false # true/false
+    sge: false # true/false
+    use_single_token_triplets: false # true/false
+    save_foldername: o1_fewshot_pen
+
+  - task: PERM # automatically fetches data_cfg_prompting_perm.yaml
+    how_many_runs: 10 # how many times the LLM should be prompted
+    has_description: false # true/false
+    ask_for_cot: false # true/false/with_code
+    fewshot_cot: false # true/false/enumerate
+    manyshot: false # true/false
+    sge: false # true/false
+    save_foldername: o1_fewshot_perm
+
+  - task: PEN # automatically fetches data_cfg_prompting_pen.yaml
+    how_many_runs: 5 # how many times the LLM should be prompted
+    has_description: false # true/false
+    ask_for_cot: false # true/false/with_code
+    fewshot_cot: false # true/false/2stages
+    remove_doublegangers: false # true/false
+    manyshot: false # true/false
+    sge: false # true/false
+    use_single_token_triplets: false # true/false
+    save_foldername: o1_2stage_pen
+
+  - task: PERM # automatically fetches data_cfg_prompting_perm.yaml
+    how_many_runs: 5 # how many times the LLM should be prompted
+    has_description: true # true/false
+    ask_for_cot: true # true/false/with_code
+    fewshot_cot: enumerate # true/false/enumerate
+    manyshot: false # true/false
+    sge: false # true/false
+    save_foldername: o1_enumerate_perm
+
+  - task: PEN # automatically fetches data_cfg_prompting_pen.yaml
+    how_many_runs: 5 # how many times the LLM should be prompted
+    has_description: true # true/false
+    ask_for_cot: true # true/false/with_code
+    fewshot_cot: false # true/false/2stages
+    remove_doublegangers: false # true/false
+    manyshot: false # true/false
+    sge: false # true/false
+    use_single_token_triplets: false # true/false
+    save_foldername: o1_cot_pen
+
+  - task: PERM # automatically fetches data_cfg_prompting_perm.yaml
+    how_many_runs: 5 # how many times the LLM should be prompted
+    has_description: true # true/false
+    ask_for_cot: true # true/false/with_code
+    fewshot_cot: false # true/false/enumerate
+    manyshot: false # true/false
+    sge: false # true/false
+    save_foldername: o1_cot_perm

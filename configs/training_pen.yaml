@@ -1,0 +1,40 @@
+# The following defines the task hyperparameters we used for training. 
+# Validation sets have are iid, so the same ask hyperparameters.
+# the how_many parameter for the composition task (last in the list) is varied in our experiments as specified in the paper.
+data_mix: 
+  - task: CopyTask
+    logname: copy
+    how_many: 20000
+    min_len: 10
+    max_len: 40
+  - task: CopyTask
+    logname: revcpy
+    reverse: true
+    how_many: 20000
+    min_len: 10
+    max_len: 40
+  - task: PointerExecutionNeighbour
+    logname: pe
+    how_many: 60000
+    sub_task: seq
+    min_len: 40
+    max_len: 50
+    min_hops: 10
+    max_hops: 20
+  - task: PointerExecutionNeighbour
+    logname: pev
+    how_many: 100000
+    sub_task: seqnext
+    min_len: 30
+    max_len: 40
+    min_hops: 10
+    max_hops: 15
+  - task: PointerExecutionNeighbour
+    logname: pen
+    how_many: 500000 # example number, varied in experiments to test compositional learning
+    sub_task: next
+    min_len: 40
+    max_len: 50
+    min_hops: 10
+    max_hops: 20
+

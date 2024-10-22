@@ -1,0 +1,22 @@
+# The following defines the task hyperparameters we used for training. 
+# Validation sets have are iid, so the same ask hyperparameters.
+# the how_many parameter for the composition task (last in the list) is varied in our experiments as specified in the paper.
+data_mix:
+  - task: MultiplicationTask
+    logname: digit_x_number
+    sub_task: mul
+    how_many: 10000
+    max_len_left: 1
+    max_len_right: 6
+  - task: MultiplicationTask
+    logname: number_+_number
+    sub_task: sum
+    how_many: 70000
+    max_len_left: 12
+    max_len_right: 12
+  - task: MultiplicationTask
+    logname: number_x_number
+    sub_task: mul
+    how_many: 80000 # example number, varied in experiments to test compositional learning
+    max_len_left: 6
+    max_len_right: 6 

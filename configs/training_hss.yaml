@@ -1,0 +1,16 @@
+# The following defines the task hyperparameters we used for training. 
+# Validation sets have are iid, so the same ask hyperparameters.
+# the how_many parameter for the composition task (last in the list) is varied in our experiments as specified in the paper.
+data_mix:
+  - task: HighestSubseqenceNoNeighboursTask
+    logname: dp-exec-trace
+    sub_task: exec
+    how_many: 20000
+    min_len: 5
+    max_len: 25
+  - task: HighestSubseqenceNoNeighboursTask
+    logname: dp-sum
+    sub_task: sum
+    how_many: 20000 # example number, varied in experiments to test compositional learning
+    min_len: 5
+    max_len: 25

@@ -1,0 +1,10 @@
+# The following defines the task hyperparameters we used for prompting.
+data_mix: 
+  - task: PointerExecutionNeighbour
+    logname: pen
+    how_many: 100
+    sub_task: next
+    min_len: 22
+    max_len: 33
+    min_hops: 10
+    max_hops: 20
