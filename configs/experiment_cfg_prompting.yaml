@@ -12,7 +12,7 @@ model_name: o1-preview # we used gpt-4-0613 and o1-preview and gemini-pro
 experiments:
 
   - task: PEN # automatically fetches data_cfg_prompting_pen.yaml
-    how_many_runs: 8 # how many times the LLM should be prompted
+    how_many_runs: 5 # how many times the LLM should be prompted
     has_description: false # true/false
     ask_for_cot: false # true/false/with_code
     fewshot_cot: false # true/false/2stages
@@ -23,7 +23,7 @@ experiments:
     save_foldername: o1_fewshot_pen
 
   - task: PERM # automatically fetches data_cfg_prompting_perm.yaml
-    how_many_runs: 10 # how many times the LLM should be prompted
+    how_many_runs: 5 # how many times the LLM should be prompted
     has_description: false # true/false
     ask_for_cot: false # true/false/with_code
     fewshot_cot: false # true/false/enumerate
@@ -33,9 +33,9 @@ experiments:
 
   - task: PEN # automatically fetches data_cfg_prompting_pen.yaml
     how_many_runs: 5 # how many times the LLM should be prompted
-    has_description: false # true/false
-    ask_for_cot: false # true/false/with_code
-    fewshot_cot: false # true/false/2stages
+    has_description: true # true/false
+    ask_for_cot: true # true/false/with_code
+    fewshot_cot: 2stages # true/false/2stages
     remove_doublegangers: false # true/false
     manyshot: false # true/false
     sge: false # true/false
