@@ -12,6 +12,13 @@ _NeurIPS, 2024_ [[Article]](https://arxiv.org/abs/2402.05785)
 This repository contains the code for the paper "Limits of Transformer Language Models on Learning
 to Compose Algorithms" (NeurIPS 2024), including generation code for the tasks introduced in the paper and the prompting experiments.
 
+To run our code, you can use the `conda|mamba` environment provided in `environment.yml`.
+To create and activate the environment, use
+```
+mamba env create -f environment.yml
+mamba activate pythonenv
+```
+
 For generating data, please see `generate_data_example.py` and all config files that start with 'training_...'.
 For running prompting experiments, see `run_prompting_experiments.py` and all configs with 'prompting' in the name.
 
