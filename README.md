@@ -1,10 +1,12 @@
 # Limitations of Language Models for Algorithmic Compositional Learning 
 
 #### Jonathan Thomm, Giacomo Camposampiero, Aleksandar Terzic, Michael Hersche, Bernhard Schölkopf, Abbas Rahimi
-Accepted as Conference Paper at the Thirty-eighth Annual Conference on Neural Information Processing Systems (NeurIPS) 2024.
+Accepted as Conference Paper at the Thirty-eighth Annual Conference on Neural Information Processing Systems (NeurIPS) 2024. 
+
+[[Paper]](https://arxiv.org/abs/2402.05785) | [[Presentation]](https://example.com)
 
 <div align="center">
-  <img src='figures/results.png' width="80%"/>
+  <img src='figures/plots.png' width="80%"/>
 </div>
 
 
