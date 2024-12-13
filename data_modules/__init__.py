@@ -1,0 +1,1 @@
+from .synthetic_tasks import SynthTasks

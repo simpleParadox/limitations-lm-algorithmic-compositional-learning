@@ -9,6 +9,7 @@ number_chars = list("0123456789")
 
 class PointerExecutionNeighbour:
     def __init__(self, min_len, max_len, min_hops, max_hops, sub_task="next"):
+        # import pdb; pdb.set_trace()
         self.length_low = min_len  # min length of the sequence
         assert (
             self.length_low >= 2
@@ -29,6 +30,7 @@ class PointerExecutionNeighbour:
         lengths = np.arange(self.length_low, self.length_high)
         samples = []
         answers = []
+        # import pdb; pdb.set_trace()
         while len(samples) < n_samples:
             length = np.random.choice(lengths)
             n_matching_hops = np.random.choice(

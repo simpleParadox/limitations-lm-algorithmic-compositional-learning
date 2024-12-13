@@ -20,3 +20,7 @@ performer.egg-info
 
 outputs
 **.code-workspace
+
+/train_scripts
+configs/*
+models/
